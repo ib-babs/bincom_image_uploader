@@ -1,0 +1,23 @@
+﻿@model IEnumerable<ImageInfo>
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<h2 class="pb-3">Gallery 📷📸</h2>
+@if (Model != null)
+{
+    <div class="d-flex gap-2 flex-wrap">
+        @foreach (ImageInfo imgInfo in Model)
+        {
+            <div class="card p-2">
+                <a asp-action="ImagePreview" asp-route-id=@imgInfo.Id>
+                    <image src="/uploaded-images/@imgInfo.FileName" alt="@imgInfo.FileName" class="card-img-top" style="width:200px" /><br>
+                </a>
+            </div>
+        }
+    </div>
+}
+else
+{
+    <h5><i>No images.</i></h5>
+}

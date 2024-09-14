@@ -1,0 +1,10 @@
+﻿@model Uploader
+@{
+    ViewData["Title"] = "UploadImage";
+}
+<div asp-validation-summary="All"></div>
+<form asp-action="UploadImage" enctype="multipart/form-data">
+    <input type="file" asp-for="Image" accept="image/*" />
+    <input type="submit" value="Upload" />
+</form>
+

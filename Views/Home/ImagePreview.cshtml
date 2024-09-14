@@ -1,0 +1,8 @@
+﻿@model ImageInfo
+@{
+    ViewData["Title"] = "Image Previewing";
+}
+
+<div class="card p-3" style="display: grid; justify-content: center ">
+    <image src="/uploaded-images/@Model.FileName" alt="@Model.FileName" class="card-img-top" style="width:500px" /><br>
+</div>
